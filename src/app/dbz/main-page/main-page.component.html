@@ -1,0 +1,27 @@
+<h1>Dragon Ball Z</h1>
+
+<hr>
+
+<div class="row">
+
+  <!--* listado componente -->
+  <div class="col">
+    <app-personajes></app-personajes>
+  </div>
+
+  <!--* agregar componente -->
+  <div class="col">
+    <app-agregar [nuevo]="nuevo"></app-agregar>
+  </div>
+
+  <!--? [propiedad con @input]="propiedad del padre" -->
+  <!-- <div class="col">
+    <app-personajes [personajes]="personajes"></app-personajes>
+  </div> -->
+
+  <!--? envio del hijo al padre mediante metodo($event) -->
+  <!-- <div class="col">
+    <app-agregar [nuevo]="nuevo" (onPersonaje)="insertNuevoPerson($event)"></app-agregar>
+  </div> -->
+
+</div>

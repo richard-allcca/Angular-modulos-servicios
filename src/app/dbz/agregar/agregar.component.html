@@ -1,0 +1,16 @@
+<h3>Agregar</h3>
+<hr>
+
+<!--? ngSubmit para submit y preventDefault de submit -->
+<form (ngSubmit)="agregar()">
+
+  <!--? obtener valor metodo simple -->
+  <!-- <input type="text" placeholder="Personaje" [value]='nuevo.nombre' (input)="cambiarNombre($event)"> -->
+
+  <!--? obtener valor con ngModel - two data binding-->
+  <input type="text" placeholder="Personaje" name="nombre" [(ngModel)]='nuevo.nombre'>
+  <input type="number" placeholder="Poder" name="poder" [(ngModel)]='nuevo.poder'>
+
+  <button type="submit">Agregar</button>
+
+</form>
