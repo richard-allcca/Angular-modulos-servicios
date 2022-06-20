@@ -1,27 +1,43 @@
-<h1>Dragon Ball Z</h1>
-
+<h2>Dragon Ball Z</h2>
 <hr>
 
 <div class="row">
 
-  <!--* listado componente -->
   <div class="col">
-    <app-personajes></app-personajes>
+    <h3>Personajes</h3>
+    <hr>
+    <ul>
+      <li *ngFor="let hero of personajes" >
+        {{hero.nombre}} - {{hero.poder | number}}
+      </li>
+    </ul>
   </div>
 
-  <!--* agregar componente -->
   <div class="col">
-    <app-agregar [nuevo]="nuevo"></app-agregar>
+    <h3>Agregar</h3>
+    <hr>
+
+    <form (ngSubmit)="agregar()" >
+      <input 
+      type="text" 
+      placeholder="Nombre" 
+      name="nombre"
+      [(ngModel)]="nuevo.nombre"
+      >
+
+      <input 
+      type="number"
+      placeholder="Poder" 
+      name="poder"
+      [(ngModel)]="nuevo.poder"
+      >
+
+      <button type="submit">
+        Agregar
+      </button>
+    </form>
+
   </div>
-
-  <!--? [propiedad con @input]="propiedad del padre" -->
-  <!-- <div class="col">
-    <app-personajes [personajes]="personajes"></app-personajes>
-  </div> -->
-
-  <!--? envio del hijo al padre mediante metodo($event) -->
-  <!-- <div class="col">
-    <app-agregar [nuevo]="nuevo" (onPersonaje)="insertNuevoPerson($event)"></app-agregar>
-  </div> -->
 
 </div>
+ 

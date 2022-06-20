@@ -8,24 +8,23 @@ import { Personaje } from './../interfaces/dbz.interface';
   styleUrls: ['./agregar.component.css'],
 })
 export class AgregarComponent {
-  //? propiedades del padre al hijo
+  // @input - propiedades del padre al hijo
   @Input() nuevo: Personaje = {
     nombre: '',
     poder: 0,
   };
 
-  // @Output() onPersonaje: EventEmitter<Personaje> = new EventEmitter();
-
   constructor(private dbzService: DbzService) {}
 
   agregar() {
+    // validation content
     if (this.nuevo.nombre.trim().length === 0) {
       alert('No has ingresado un Personaje');
       return;
     }
 
-    // this.onPersonaje.emit(this.nuevo); // con eventemitter
-    this.dbzService.agregarPersonaje(this.nuevo); // inyeccion de servicio
+    // inyección de service
+    this.dbzService.agregarPersonaje(this.nuevo);
 
     this.nuevo = {
       nombre: '',
@@ -33,3 +32,11 @@ export class AgregarComponent {
     };
   }
 }
+
+//? Notas:
+// @Output() onNameEventCustom: EventEmitter<TipoEnviado> = new EventEmitter();
+// this.onNameEventCustom.emit(this.nuevo); 
+// el componente.html receptor recibe la data del evento como propiedad con:
+// (nameEventoEmitter)="nameEventoReceptor($event)"
+
+

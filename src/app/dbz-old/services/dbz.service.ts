@@ -14,6 +14,7 @@ export class DbzService {
     },
   ];
 
+  // ? return de personajes desligados de su referencia
   get personajes(): Personaje[] {
     return [...this._personajes];
   }

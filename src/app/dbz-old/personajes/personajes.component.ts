@@ -7,9 +7,12 @@ import { DbzService } from '../services/dbz.service';
   styleUrls: ['./personajes.component.css'],
 })
 export class PersonajesComponent {
+
+
   constructor(private dbzService: DbzService) {}
 
   get personajes() {
     return this.dbzService.personajes;
   }
+
 }

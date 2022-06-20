@@ -1,11 +1,19 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { HeroeComponent } from './heroe/heroe.component';
 import { ListadoComponent } from './listado/listado.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [HeroeComponent, ListadoComponent], //lista d components
-  exports: [ListadoComponent], // component a mostrar
-  imports: [CommonModule], // directivas personalizadas ngfor,ngif,else
+  declarations: [
+    HeroeComponent, ListadoComponent
+  ],
+  exports: [
+    ListadoComponent
+  ],
+  imports: [
+    CommonModule
+  ]
 })
-export class HeroesModule {}
+export class HeroesModule {
+
+}

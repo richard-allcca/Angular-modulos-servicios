@@ -7,9 +7,16 @@ import { Component } from '@angular/core';
     <h3>
       La base es de: <strong>{{ base }}</strong>
     </h3>
-    <button (click)="acumular(+base)">+{{ base }}</button>
+
+    <button (click)="conteo('sumar')">
+      +{{ base }}
+    </button>
+
     <span>{{ numero }}</span>
-    <button (click)="acumular(-base)">-{{ base }}</button>
+
+    <button (click)="conteo('restar')">
+      -{{ base }}
+    </button>
   `,
 })
 export class ContadorComponent {
@@ -17,7 +24,13 @@ export class ContadorComponent {
   numero: number = 10;
 
   base: number = 15;
-  acumular(valor: number) {
-    this.numero += valor;
+
+  conteo(valor: string) {
+    if(valor === 'sumar') {
+      this.numero += this.base;
+    }
+    if(valor === 'restar') {
+      this.numero -= this.base;
+    }
   }
 }
