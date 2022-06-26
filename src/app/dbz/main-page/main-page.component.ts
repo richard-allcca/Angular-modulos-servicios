@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DbzService } from '../Services/dbz.service';
 
 interface Personaje {
   nombre: string;
@@ -12,20 +13,12 @@ interface Personaje {
 })
 export class MainPageComponent {
 
-  personajes: Personaje[] = [
-    {
-      nombre: 'Golu',
-      poder: 15000,
-    },
-    {
-      nombre: 'Vegeta',
-      poder: 7000,
-    }
-  ];
-
-  nuevo: Personaje = {
+  nuevoPersonaje: Personaje = {
     nombre: 'Richard',
     poder: 12000
   }
+
+  // Inyección de dependencias
+  // constructor(private dbzService: DbzService) { }
 
 }
