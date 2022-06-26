@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Personaje } from '../interfaces/dbz.interface';
+import { Personaje } from '../../dbz/interfaces/dbz.interface';
 
 @Injectable()
 export class DbzService {

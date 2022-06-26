@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Personaje } from './../interfaces/dbz.interface';
+import { Personaje } from '../../dbz/interfaces/dbz.interface';
 
 @Component({
   selector: 'app-main-page',

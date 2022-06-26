@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DbzService } from '../services/dbz.service';
-import { Personaje } from './../interfaces/dbz.interface';
+import { Personaje } from '../../dbz/interfaces/dbz.interface';
 
 @Component({
   selector: 'app-agregar',

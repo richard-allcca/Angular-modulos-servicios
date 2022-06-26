@@ -1,5 +1,7 @@
 # Bases
 
+Theme  - Night Wolf dark blue No Italics
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
 
 Notas Importantes!
@@ -26,6 +28,11 @@ Notas Importantes!
 
 2. @Input
     - Para el paso de datos del Padre al Hijo
+    - Se debe enlazar la prop de padre mediante el html
+    - El example.ts recibe la prop con @Input()
+
+          @Input nameProp: tipoData = valor;
+          <app-component-hijo [namePropHijo]="namePropPadre">
 
 3. @OutPut
     - Para que el componente hijo envíe datos al padre
