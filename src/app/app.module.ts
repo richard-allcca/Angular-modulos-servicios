@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeroesModule } from './heroes/heroes.module';
+
 import { DbzModule } from './dbz/dbz.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from './shared/shared.module';
+import { GifsModule } from './gifs/gifs.module';
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HeroesModule, DbzModule],
+  imports: [BrowserModule, HttpClientModule, DbzModule, SharedModule, GifsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
