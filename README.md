@@ -1,4 +1,4 @@
-# Bases
+# Bases de Angular
 
 Theme  - Night Wolf dark blue No Italics
 
@@ -9,6 +9,13 @@ Notas Importantes!
     Para utilizar módulos en otros módulos se les invoca mediante el nombre de su clase
     Para Utilizar el html de los componentes se le invoca mediante su 'selector' html
 
+## Proyectos
+
+- Aplicación de contador basico.
+- Aplicación de DBZ, pseudo crud con listado de personajes.
+- Aplicación de Gif, busqueda de gifs mediante peticiones http.
+- Aplicación de listado simple de heroes, practica de manejo de directivas.
+
 ## Directivas
 
 1. *ngIf
@@ -17,23 +24,29 @@ Notas Importantes!
 
 ## Decoradores
 
-1. @Input
+1. @Input()
     - Para el paso de datos del Padre al Hijo
     - Se debe enlazar la prop de padre mediante el html
-    - El `padre.ts` recibe la prop con @Input()
+    - El `hijo.ts` recibe la prop con @Input()
 
           @Input nameProp: tipoData = valor;
           <app-component-hijo [namePropHijo]="namePropPadre">
 
-2. @OutPut
+2. @OutPut()
     - Componente hijo envíe datos al padre
-    - Se crea un evento con este decorador en el hijo y el padre lo recibe en el html
-    - Html padre recibe el evento del hijo entre `()` y el evento del padre entre `""`
+    - Se crea un evento con este decorador en el hijo
+    - el tipo del evento es el tipo de dato que se envía
+    - el padre recibe el evento en el html
     - En el Ts del padre lo recibe como un `Evento`
-    - `Importante` usar Interfaces Genéricas y `$event`
+    - `Importante` usar el `$event` como parámetro
   
-          @Output nameProp: EventEmitter<NameInterface> = new EventEmitter();
+          @Output onNameEvent: EventEmitter<tipoDatoEnviado> = new EventEmitter();
           (onNameEvent)="nameEventPadre($event)"
+
+3. @viewChild()
+    - Lee contenido del un input
+    - En su parámetro recibe la referencia al input `#`
+    - El value se encuentra en `nativeElement.value`
 
 ## Módulos
 
@@ -74,6 +87,37 @@ Notas Importantes!
 - transforma visualmente la información
 
 1. `number` - modifica un número entero para darle coma decimal
+
+## Debounce
+
+1. Necesitas el `OnInit` en el component ts.
+
+2. Crea un evento emisor con `@input()`.
+
+3. Crea un `Subject`.
+
+4. Usa un (input) en el input del formulario para ejecutar un evento `presionarTecla`
+  
+5. use el evento `presionarTecla` para enviar el valor del input al `ngOninit`
+  
+6. Crea un `pipe` antes de `subscribe` para el tiempo que debe esperara antes de emitir el siguiente valor
+  
+7. Usa dentro del `pipe` el `debounceTime(300)` de `rxjs`
+
+8. En `subscribe` emite el valor con `this.debounce.emit(valor)`
+
+9. Recibe el evento en el html del Padre con `(onDebounce)='eventePadre'`
+
+        @input() onDebounce: EventEmitter<tipoDatoEmitido> = new EventEmitter();
+        debounce: Subject<string> = new Subject();
+        ngOnInit():void{
+          this.debounce.subscribe(valor=>{
+            
+          })
+        }
+        teclaPresionada(){
+          this.debounce.next(this.termino)
+        }
 
 ## Comandos de Terminal
 
