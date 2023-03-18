@@ -17,6 +17,10 @@ import { Component } from '@angular/core';
     <button (click)="conteo('restar')">
       -{{ base }}
     </button>
+
+    <button (click)="conteo('reset')">
+      reset to {{ base }}
+    </button>
   `,
 })
 export class ContadorComponent {
@@ -26,11 +30,14 @@ export class ContadorComponent {
   base: number = 15;
 
   conteo(valor: string) {
-    if(valor === 'sumar') {
+    if (valor === 'sumar') {
       this.numero += this.base;
     }
-    if(valor === 'restar') {
+    if (valor === 'restar') {
       this.numero -= this.base;
+    }
+    if (valor === 'reset') {
+      this.numero = this.base;
     }
   }
 }

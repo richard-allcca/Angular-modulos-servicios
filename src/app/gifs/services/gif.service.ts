@@ -7,7 +7,7 @@ import { Gif, SearchGIFResponse } from '../interface/gifs.interface';
 })
 export class GifService {
 
-  private url: string = 'https://api.giphy.com/v1/gifs/';
+  private url: string = 'https://api.giphy.com/v1/gifs';
   private apiKey: string = 'iGk4Cf4Uc0afvcm6bNLr15qT3COxulwj';
   private historial: string[] = [];
 
@@ -43,10 +43,10 @@ export class GifService {
 
     this.http.get<SearchGIFResponse>(`${this.url}/search`, { params })
       .subscribe((resp) => {
-        console.log(resp.data)
+        console.log(resp.data);
         localStorage.setItem("lsResultados", JSON.stringify(resp.data));
         return this.resultados = resp.data;
-      })
+      });
   }
 
 }

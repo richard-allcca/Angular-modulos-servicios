@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DbzService } from '../Services/dbz.service';
 
 interface Personaje {
   nombre: string;
@@ -16,9 +15,14 @@ export class MainPageComponent {
   nuevoPersonaje: Personaje = {
     nombre: 'Richard',
     poder: 12000
-  }
+  };
 
-  // Inyección de dependencias
+  // NOTE - Evento para recibir data del hijo
+  // recibido(data:tipoDataRecibida) {
+  //   console.log("recibido", data);
+  // }
+
+  // NOTE - Inyección de dependencias(en personajes)
   // constructor(private dbzService: DbzService) { }
 
 }

@@ -74,20 +74,36 @@ Notas Importantes!
 
 2. `(ngSubmit)` - necesitas el `FormModule` en imports de module, además un name en input
 
-3. `(input)` - ingresa un nuevo valor al input html cuando su valor cambie en el `ts`
+3. `(input)` - ONE WAY DATA BINDING envia valor del input al `ts`
   
-4. `[(ngModel)]` - two data biding, `[]` captura el valor del name y `()` emite el valor
+4. `[(ngModel)]` - TWO WAY DATA BINDING, `[]` captura el valor y `()` emite el valor
+
+5. `[ngClass]`.
+  5.1 string: se agregan las clases CSS enumeradas en la cadena (delimitadas por espacios).
+  5.2 Array: se agregan las clases CSS declaradas como elementos Array.
+  5.3 Objeto: las claves son clases de CSS que se agregan cuando la expresión dada en el valor se evalúa como un valor verdadero; de lo contrario, se elimina
 
 ## Propiedades dinámicas - []
 
-- Se establecen mediante `[]` y la variable, obj o array va en `comillas dobles`
+- Se establecen con `[]`, su valor o data en `comillas dobles`
 
-## Pipes
+## Pipes [List](https://angular.io/api?type=pipe)
 
-- transforma visualmente la información
+     ° AsyncPipe
+     ° CurrencyPipe
+     ° DatePipe
+     ° DecimalPipe
+     ° I18nPluralPipe
+     ° I18nSelectPipe
+     ° JsonPipe
+     ° KeyValuePipe
+     ° LowerCasePipe
+     ° PercentPipe
+     ° SlicePipe
+     ° TitleCasePipe
+     ° UpperCasePipe
 
-1. `number` - modifica un número entero para darle coma decimal
-
+<!-- FIXME  -->
 ## Debounce
 
 1. Necesitas el `OnInit` en el component ts.

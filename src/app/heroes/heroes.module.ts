@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
     HeroeComponent, ListadoComponent
   ],
   exports: [
-    ListadoComponent
+    ListadoComponent, HeroeComponent
   ],
   imports: [
     CommonModule

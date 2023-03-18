@@ -3,20 +3,19 @@
 <h3>listado de Heroes</h3>
 
 <!-- ? ngIf con else -->
-<div *ngIf="heroDeleted; else noBorrado" >
+<div *ngIf="heroDeleted; else noBorrado">
   <h4>Heroe Borrado: <span>{{heroDeleted}}</span></h4>
 </div>
 
-<ng-template #noBorrado >No has Borrado ningún Héroe</ng-template>
+<ng-template #noBorrado>No has Borrado ningún Héroe</ng-template>
 
 
 <!-- ? ngFor con Index -->
 <ul>
   <li *ngFor="let hero of heroes; let i = index">
-    {{i + 1 }} {{hero}}
+    <div (click)="delete(hero)">{{i + 1 }} {{hero}} (click para eliminar)</div>
   </li>
 </ul>
-
 
 <button (click)="borrarHero()">
   Borrar Hero

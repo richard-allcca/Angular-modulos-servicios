@@ -1,21 +1,19 @@
-
-
 <h2>Dragon Ball Z</h2>
-<hr>
+<hr />
 
 <div class="row">
-    
-  <!-- @Input() -->
   <div class="col">
-    <app-personajes ></app-personajes>
+    <app-personajes></app-personajes>
   </div>
 
+  <!-- NOTE
+    enviamos la datos al hijo con [nuevo] y lo recibe el hijo con @Input() 
+  -->
 
-  
   <div class="col">
-    <app-add-form [nuevo]="nuevoPersonaje" ></app-add-form>
+    <app-add-form [nuevo]="nuevoPersonaje"></app-add-form>
   </div>
-
-
 </div>
- 
+
+<!-- Prop para recibir data el hijo -->
+<!-- (onNuevoPersonaje)="recibido($event)" -->

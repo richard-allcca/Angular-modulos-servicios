@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core"
+import { Injectable } from "@angular/core";
 import { Personaje } from "../interfaces/dbz.interface";
 
 
@@ -16,7 +16,7 @@ export class DbzService {
     }
   ];
 
-  // ? Usamos spread operator para romper la referencia entre los objetos
+  // ? Usamos spread operator para romper la referencia
   get getPersonajes(): Personaje[] {
     return [...this.personajes];
   }
