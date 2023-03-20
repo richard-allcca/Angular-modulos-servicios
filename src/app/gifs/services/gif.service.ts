@@ -12,7 +12,6 @@ export class GifService {
   private historial: string[] = [];
 
   public resultados: Gif[] = JSON.parse(localStorage.getItem("lsResultados")!) || [];
-  // public resultados: Gif[] = [];
 
   get getHistorial() {
     return [...this.historial];

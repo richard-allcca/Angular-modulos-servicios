@@ -14,6 +14,7 @@ Notas Importantes!
 - Aplicación de contador basico.
 - Aplicación de DBZ, pseudo crud con listado de personajes.
 - Aplicación de Gif, busqueda de gifs mediante peticiones http.
+  - Bootstrap
 - Aplicación de listado simple de heroes, practica de manejo de directivas.
 
 ## Directivas
@@ -82,6 +83,12 @@ Notas Importantes!
   5.1 string: se agregan las clases CSS enumeradas en la cadena (delimitadas por espacios).
   5.2 Array: se agregan las clases CSS declaradas como elementos Array.
   5.3 Objeto: las claves son clases de CSS que se agregan cuando la expresión dada en el valor se evalúa como un valor verdadero; de lo contrario, se elimina
+
+## Peticiones HTTP - @angular/common/http
+
+- HttpClientModule, se provee en el appModule
+- HttpClient, en el servicio donde se hace la petición
+- HttpParams, es parte de @angular/common/http, usa un set("") por cada param
 
 ## Propiedades dinámicas - []
 

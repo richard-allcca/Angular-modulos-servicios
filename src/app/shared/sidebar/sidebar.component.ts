@@ -11,8 +11,8 @@ export class SidebarComponent {
   historialGif: string[] = [];
 
   get historial() {
-    const data = this.gifService.getHistorial
-    return data
+    const data = this.gifService.getHistorial;
+    return data;
   }
 
   constructor(private gifService: GifService) { }

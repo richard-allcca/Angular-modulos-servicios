@@ -9,8 +9,6 @@ import { GifService } from '../services/gif.service';
 })
 export class ResultadosComponent {
 
-  resultados: Gif[] = [];
-
   get getResultados() {
     return this.gifService.resultados;
   }

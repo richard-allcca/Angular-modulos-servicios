@@ -1,17 +1,18 @@
 <section class="bg-dark border-right p-3" id="sidebar">
-
   <h3>Gif-App</h3>
 
-  <hr class="text-white">
+  <hr class="text-white" />
 
-  <div *ngFor="let item of historial" class="list-group list-reset animate__animated animate__backInLeft ">
-    <a 
-    href="#" 
-    class="list-group-item list-group-item-action mt-1 "
-    (click)="buscarGif(item)"
+  <div
+    *ngFor="let item of historial"
+    class="list-group list-reset animate__animated animate__backInLeft"
+  >
+    <a
+      href="#"
+      class="list-group-item list-group-item-action mt-1"
+      (click)="buscarGif(item)"
     >
       {{ item | titlecase }}
     </a>
   </div>
-
 </section>
