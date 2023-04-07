@@ -9,11 +9,13 @@ import { SharedModule } from './shared/shared.module';
 import { GifsModule } from './gifs/gifs.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { ContadorModule } from './contador/contador.module';
+import { AppRoutingModule } from './app.routing.module';
+import { ViewportComponent } from './ViewportComponent/Viewport.component';
 
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, DbzModule, SharedModule, GifsModule, HeroesModule, ContadorModule],
+  declarations: [	AppComponent,ViewportComponent],
+  imports: [BrowserModule, AppRoutingModule,HttpClientModule, DbzModule, SharedModule, GifsModule, HeroesModule, ContadorModule],
   providers: [],
   bootstrap: [AppComponent],
 })

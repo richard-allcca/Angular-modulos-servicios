@@ -4,10 +4,14 @@ Theme  - Night Wolf dark blue No Italics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
 
-Notas Importantes!
+## Como ver los componentes en local
 
-    Para utilizar módulos en otros módulos se les invoca mediante el nombre de su clase
-    Para Utilizar el html de los componentes se le invoca mediante su 'selector' html
+    De inicio se muestra el componete de Viewport.
+    Para utilizar los componentes usa las siguientes rutas:
+    /contador
+    /dbz
+    /gifs
+    /heroes
 
 ## Proyectos
 
@@ -44,10 +48,11 @@ Notas Importantes!
           @Output onNameEvent: EventEmitter<tipoDatoEnviado> = new EventEmitter();
           (onNameEvent)="nameEventPadre($event)"
 
-3. @viewChild()
+3. @viewChild() - example in component busqueda gifs
+    - @ViewChild('nameRef') nameAsignateForUse: ElementRef
     - Lee contenido del un input
-    - En su parámetro recibe la referencia al input `#`
     - El value se encuentra en `nativeElement.value`
+    - @viewchild puede hacer referencia al elemento por la etiqueta, la clase, o el #ref con la referencia que especifiques
 
 ## Módulos
 

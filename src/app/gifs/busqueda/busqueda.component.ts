@@ -8,15 +8,17 @@ import { GifService } from '../services/gif.service';
 })
 export class BusquedaComponent {
 
+  // @ViewChild('nameRef') nameAsignateForUse: type
+  // non-null assertion operator "!"
   @ViewChild('textBuscar') textBuscar!: ElementRef<HTMLInputElement>;
 
   constructor(private gifService: GifService) { }
 
   buscarGif() {
 
-    const valor = this.textBuscar.nativeElement.value
+    const valor = this.textBuscar.nativeElement.value;
 
-    if (valor.trim().length === 0) return
+    if (valor.trim().length === 0) return;
 
     this.gifService.buscarGif(valor);
 
