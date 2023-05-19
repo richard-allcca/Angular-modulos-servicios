@@ -11,12 +11,24 @@ import { HeroesModule } from './heroes/heroes.module';
 import { ContadorModule } from './contador/contador.module';
 import { AppRoutingModule } from './app.routing.module';
 import { ViewportComponent } from './ViewportComponent/Viewport.component';
-
+import { MainModule } from './main/main.module';
+import { PaisModule } from './pais/pais.module';
 
 @NgModule({
-  declarations: [	AppComponent,ViewportComponent],
-  imports: [BrowserModule, AppRoutingModule,HttpClientModule, DbzModule, SharedModule, GifsModule, HeroesModule, ContadorModule],
+  declarations: [AppComponent, ViewportComponent],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    ContadorModule,
+    DbzModule,
+    GifsModule,
+    HeroesModule,
+    HttpClientModule,
+    SharedModule,
+    MainModule,
+    PaisModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

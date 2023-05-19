@@ -4,7 +4,7 @@ Theme  - Night Wolf dark blue No Italics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
 
-## Como ver los componentes en local
+## Vista de los componentes
 
     De inicio se muestra el componete de Viewport.
     Para utilizar los componentes usa las siguientes rutas:
@@ -15,11 +15,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Proyectos
 
+- Componente para ver el viewport.
 - Aplicación de contador basico.
-- Aplicación de DBZ, pseudo crud con listado de personajes.
-- Aplicación de Gif, busqueda de gifs mediante peticiones http.
-  - Bootstrap
-- Aplicación de listado simple de heroes, practica de manejo de directivas.
+- SPA de DBZ, pseudo crud con listado de personajes.
+- SPA de Gif, busqueda de gifs mediante peticiones http.
+- SPA listado simple de heroes, manejo de directivas.
 
 ## Directivas
 
@@ -39,12 +39,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 2. @OutPut()
     - Componente hijo envíe datos al padre
-    - Se crea un evento con este decorador en el hijo
+    - En el hijo crea una propiedad con este decorador
     - el tipo del evento es el tipo de dato que se envía
-    - el padre recibe el evento en el html
+    - el padre recibe el evento en el html con []=""
     - En el Ts del padre lo recibe como un `Evento`
     - `Importante` usar el `$event` como parámetro
-  
+
           @Output onNameEvent: EventEmitter<tipoDatoEnviado> = new EventEmitter();
           (onNameEvent)="nameEventPadre($event)"
 
@@ -81,7 +81,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2. `(ngSubmit)` - necesitas el `FormModule` en imports de module, además un name en input
 
 3. `(input)` - ONE WAY DATA BINDING envia valor del input al `ts`
-  
+
 4. `[(ngModel)]` - TWO WAY DATA BINDING, `[]` captura el valor y `()` emite el valor
 
 5. `[ngClass]`.
@@ -116,7 +116,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
      ° UpperCasePipe
 
 <!-- FIXME  -->
-## Debounce
+## Debounce (SPA paises)
 
 1. Necesitas el `OnInit` en el component ts.
 
@@ -125,11 +125,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 3. Crea un `Subject`.
 
 4. Usa un (input) en el input del formulario para ejecutar un evento `presionarTecla`
-  
+
 5. use el evento `presionarTecla` para enviar el valor del input al `ngOninit`
-  
+
 6. Crea un `pipe` antes de `subscribe` para el tiempo que debe esperara antes de emitir el siguiente valor
-  
+
 7. Usa dentro del `pipe` el `debounceTime(300)` de `rxjs`
 
 8. En `subscribe` emite el valor con `this.debounce.emit(valor)`
@@ -140,7 +140,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
         debounce: Subject<string> = new Subject();
         ngOnInit():void{
           this.debounce.subscribe(valor=>{
-            
+
           })
         }
         teclaPresionada(){

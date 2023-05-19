@@ -1,0 +1,11 @@
+.small-flag {
+  width: 50px;
+}
+
+li {
+  list-style: none;
+}
+
+.mr-1 {
+  margin-right: .5rem;
+}
